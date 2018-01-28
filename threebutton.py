@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 #
 #  threebutton.py
-#  
+#
 #  Copyright (c) 2018 Robert P. Ringstad
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -33,8 +33,8 @@ class PressHandler:
         pass
 
     function_dict = {-1: keyboard.release,
-              0: dummy_function,
-              1: keyboard.press}
+                     0: dummy_function,
+                     1: keyboard.press}
 
     def __init__(self, keylist):
         self.key_list = keylist
@@ -57,12 +57,12 @@ class PressHandler:
 
 
 def main(args):
-    ph = PressHandler(['u','d','l','r','s','a','b','c'])
+    ph = PressHandler(['u', 'd', 'l', 'r', 's', 'a', 'b', 'c'])
     COM = 'COM4'
     BAUD = 9600
 
     print('Connecting to Arduino...')
-    ser = serial.Serial(COM, BAUD, timeout = .1)
+    ser = serial.Serial(COM, BAUD, timeout=0.1)
     sleep(3)
     print('Connected on Port: {}'.format(ser.name))
 
